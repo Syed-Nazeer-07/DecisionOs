@@ -260,13 +260,7 @@ export default function Sidebar({
             </div>
           </div>
         ) : (
-          <div className="flex items-center justify-between gap-2 w-full">
-            <button 
-              onClick={signInWithGoogle}
-              className="flex-1 flex items-center justify-center gap-2 h-9 rounded-lg bg-zinc-100 text-zinc-900 hover:bg-white transition-colors font-medium text-sm"
-            >
-              Continue with Google
-            </button>
+          <div className="flex items-center justify-end gap-2 w-full">
             <button 
               onClick={() => setShowSettings(!showSettings)} 
               className={`relative p-2 rounded-lg shrink-0 transition-colors ${

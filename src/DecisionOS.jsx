@@ -1042,6 +1042,16 @@ useEffect(() => {
 
   return (
     <div className="relative w-full h-screen bg-[#09090b] font-sans overflow-hidden select-none">
+      {!user && !authLoading && (
+        <div className="absolute top-6 right-8 z-[60]">
+          <button
+            onClick={signInWithGoogle}
+            className="flex items-center justify-center h-11 px-6 rounded-xl bg-zinc-100 text-zinc-900 hover:bg-white transition-all font-semibold text-base cursor-pointer shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0"
+          >
+            Continue with Google
+          </button>
+        </div>
+      )}
       {migrationPrompt && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm">
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 shadow-2xl max-w-sm w-full mx-4">
