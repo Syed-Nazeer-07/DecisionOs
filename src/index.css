@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #09090b;
+  overscroll-behavior: none;
+}
+
+/* Edges draw themselves in on mount (pathLength is normalized to 1). */
+@keyframes edge-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+.edge-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: edge-draw 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Nodes pop in on mount. Animated via the `scale` property so it never
+   collides with the inline `transform: translate(0,-50%)`. */
+@keyframes node-in {
+  from { scale: 0.85; }
+  to { scale: 1; }
+}
+.node-in {
+  animation: node-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes node-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+.node-pulse {
+  animation: node-pulse 1.3s ease-in-out infinite;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: none; }
+}
+.toast-in {
+  animation: toast-in 0.25s ease-out both;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
