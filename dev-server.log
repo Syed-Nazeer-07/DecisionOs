@@ -1,0 +1,113 @@
+
+> decisionos@2.0.0 dev
+> vite
+
+
+  [32m[1mVITE[22m v8.2.1[39m  [2mready in [0m[1m206[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5175[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+[2m11:03:43 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/DecisionOS.jsx, /src/index.css[22m
+[2m11:03:45 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/DecisionOS.jsx, /src/index.css[22m
+[2m11:03:48 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/DecisionOS.jsx, /src/index.css[22m
+[2m11:03:50 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/DecisionOS.jsx, /src/index.css[22m
+[2m11:04:24 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/SettingsPopover.jsx[22m
+[2m11:04:28 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/SettingsPopover.jsx[22m
+[2m11:08:06 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/Sidebar.jsx[22m
+[2m11:08:08 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/Sidebar.jsx[22m
+[2m11:14:06 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/DecisionOS.jsx, /src/index.css[22m
+[2m11:14:14 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/DecisionOS.jsx, /src/index.css[22m
+[2m11:36:55 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/DecisionOS.jsx, /src/index.css[22m
+[2m11:38:25 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/DecisionOS.jsx, /src/components/SettingsPopover.jsx[22m
+[2m11:45:57 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/SettingsPopover.jsx[22m
+[2m11:46:14 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/DecisionOS.jsx, /src/components/SettingsPopover.jsx[22m
+[2m11:46:29 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/DecisionOS.jsx, /src/index.css[22m
+[2m11:50:31 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/DecisionOS.jsx, /src/index.css[22m
+[2m11:52:51 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/DecisionOS.jsx, /src/index.css[22m
+[2m11:54:03 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/SummaryPanel.jsx[22m
+[2m11:55:16 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/DecisionOS.jsx, /src/index.css[22m
+[2m12:01:03 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/DecisionOS.jsx[22m
+[2m12:01:19 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/Sidebar.jsx[22m
+[2m12:01:31 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/DecisionOS.jsx[22m
+[2m12:02:28 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/DecisionOS.jsx, /src/index.css[22m
+[2m12:02:28 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mdependency optimized: [33m@supabase/supabase-js[32m[39m
+[2m12:02:28 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32moptimized dependencies changed. reloading[39m
+[2m12:02:28 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Error: supabaseUrl is required.
+    at validateSupabaseUrl (http://localhost:5175/node_modules/.vite/deps/@supabase_supabase-js.js?v=e1319603:20643:25)
+    at new SupabaseClient (http://localhost:5175/node_modules/.vite/deps/@supabase_supabase-js.js?v=e1319603:20880:19)
+    at createClient (http://localhost:5175/node_modules/.vite/deps/@supabase_supabase-js.js?v=e1319603:21117:9)
+    at http://localhost:5175/src/lib/supabase.js:4:25
+[2m12:02:28 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/DecisionOS.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m12:02:29 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mError[22m: supabaseUrl is required.
+[39m > validateSupabaseUrl node_modules/@supabase/supabase-js/dist/index.mjs:384:24
+ > new SupabaseClient node_modules/@supabase/supabase-js/dist/index.mjs:627:18
+ > createClient node_modules/@supabase/supabase-js/dist/index.mjs:867:8
+ > src/lib/supabase.js:6:24
+    4  |  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || ''
+    5  |  
+    6  |  export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+       |                          ^
+    7  |  
+
+[2m12:02:57 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/DecisionOS.jsx, /src/index.css[22m
+[2m12:04:25 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mError[22m: supabaseUrl is required.
+[39m > validateSupabaseUrl node_modules/@supabase/supabase-js/dist/index.mjs:384:24
+ > new SupabaseClient node_modules/@supabase/supabase-js/dist/index.mjs:627:18
+ > createClient node_modules/@supabase/supabase-js/dist/index.mjs:867:8
+ > src/lib/supabase.js:6:24
+    4  |  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || ''
+    5  |  
+    6  |  export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+       |                          ^
+    7  |  
+
+[2m12:04:27 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mError[22m: supabaseUrl is required.
+[39m > validateSupabaseUrl node_modules/@supabase/supabase-js/dist/index.mjs:384:24
+ > new SupabaseClient node_modules/@supabase/supabase-js/dist/index.mjs:627:18
+ > createClient node_modules/@supabase/supabase-js/dist/index.mjs:867:8
+ > src/lib/supabase.js:6:24
+    4  |  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || ''
+    5  |  
+    6  |  export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+       |                          ^
+    7  |  
+
+[2m12:04:27 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mError[22m: supabaseUrl is required.
+[39m > validateSupabaseUrl node_modules/@supabase/supabase-js/dist/index.mjs:384:24
+ > new SupabaseClient node_modules/@supabase/supabase-js/dist/index.mjs:627:18
+ > createClient node_modules/@supabase/supabase-js/dist/index.mjs:867:8
+ > src/lib/supabase.js:6:24
+    4  |  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || ''
+    5  |  
+    6  |  export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+       |                          ^
+    7  |  
+
+[2m12:04:27 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mError[22m: supabaseUrl is required.
+[39m > validateSupabaseUrl node_modules/@supabase/supabase-js/dist/index.mjs:384:24
+ > new SupabaseClient node_modules/@supabase/supabase-js/dist/index.mjs:627:18
+ > createClient node_modules/@supabase/supabase-js/dist/index.mjs:867:8
+ > src/lib/supabase.js:6:24
+    4  |  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || ''
+    5  |  
+    6  |  export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+       |                          ^
+    7  |  
+
+[2m8:13:04 pm[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+[2m8:13:04 pm[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+[2m8:13:04 pm[22m [36m[1m[vite][22m[39m server restarted.
+[2m8:13:59 pm[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+[2m8:14:00 pm[22m [36m[1m[vite][22m[39m server restarted.
+[2m8:20:45 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/SettingsPopover.jsx[22m
+[2m8:20:57 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/CommandBar.jsx[22m
+[2m8:21:22 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/Sidebar.jsx[22m
+[2m8:21:32 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/DecisionOS.jsx, /src/index.css[22m
+[2m8:24:19 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/DecisionOS.jsx, /src/index.css[22m
+[2m8:27:10 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/DecisionOS.jsx, /src/index.css[22m
+[2m8:28:31 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/Sidebar.jsx[22m
+[2m8:29:53 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/Dashboard.jsx[22m
+[2m8:30:21 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/Sidebar.jsx[22m
+[2m8:30:50 pm[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+[2m8:30:50 pm[22m [36m[1m[vite][22m[39m server restarted.
