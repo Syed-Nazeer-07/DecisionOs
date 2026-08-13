@@ -5,6 +5,7 @@ import {
   Pencil,
   Settings,
   Trash2,
+  Zap,
   LogOut,
 } from 'lucide-react'
 import SettingsPopover from './SettingsPopover'
