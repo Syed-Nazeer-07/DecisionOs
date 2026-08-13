@@ -265,7 +265,7 @@ export default function DecisionOS() {
 
   // ---- Camera ----
   const SIDEBAR_WIDTH = 288
-  const viewCenterX = () => SIDEBAR_WIDTH + (window.innerWidth - SIDEBAR_WIDTH) / 2
+  const viewCenterX = () => (window.innerWidth - SIDEBAR_WIDTH) / 2
   const viewCenterY = () => window.innerHeight / 2
 
   /**
@@ -307,9 +307,9 @@ export default function DecisionOS() {
     setTransform((t) => ({ ...t, scale: clamp(t.scale * factor, 0.2, 3) }))
   }, [])
 
-  const fitView = useCallback(() => {
+  const fitView = useCallback((customNodes = null) => {
     userViewportRef.current = false
-    const list = nodesRef.current
+    const list = customNodes || nodesRef.current
     if (!list.length) return
     let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity
     for (const n of list) {
@@ -321,7 +321,7 @@ export default function DecisionOS() {
     const pad = 160
     const sw = Math.max(1, window.innerWidth - SIDEBAR_WIDTH - pad * 2)
     const sh = Math.max(1, window.innerHeight - pad * 2)
-    const scale = clamp(Math.min(sw / Math.max(1, maxX - minX), sh / Math.max(1, maxY - minY)), 0.2, 1.5)
+    const scale = clamp(Math.min(sw / Math.max(1, maxX - minX), sh / Math.max(1, maxY - minY)), 0.2, 1.0)
     setTransform({
       scale,
       x: viewCenterX() - ((minX + maxX) / 2) * scale,
@@ -344,7 +344,7 @@ export default function DecisionOS() {
       setTransform(rec.viewport)
     } else {
       const root = laid.find((n) => !n.parentId)
-      if (root) focusCameraOnRef.current(root.x, root.y)
+      if (root) focusCameraOnRef.current(root.x + ROOT_WIDTH / 2, root.y)
     }
     setLastOpenedId(id)
     setDecisions(listDecisions())
@@ -373,6 +373,7 @@ export default function DecisionOS() {
           if (list.length) {
             const lastId = getLastOpenedId()
             const target = list.find((d) => d.id === lastId) || list[0]
+
             openDecisionRef.current(target.id)
           } else {
             setAppState('idle')
@@ -586,13 +587,14 @@ useEffect(() => {
   // committed position is pushed to state once on release for persistence.
   const draggingRef = useRef(false)
   const dragRef = useRef({ x: 0, y: 0 })
+  const dragStartPos = useRef({ x: 0, y: 0 })
 
   const onCanvasPointerDown = (e) => {
     if (e.target !== canvasRef.current) return
     dragRef.current = { x: e.clientX - transformRef.current.x, y: e.clientY - transformRef.current.y }
+    dragStartPos.current = { x: e.clientX, y: e.clientY }
     draggingRef.current = true
     userViewportRef.current = true
-    setSelectedId(null)
     try { canvasRef.current?.setPointerCapture?.(e.pointerId) } catch { /* ignore */ }
   }
   const onCanvasPointerMove = (e) => {
@@ -608,9 +610,18 @@ useEffect(() => {
       })
     }
   }
-  const stopDrag = () => {
+  const stopDrag = (e) => {
     if (draggingRef.current) setTransform(transformRef.current)
     draggingRef.current = false
+    
+    // If we didn't move much, it was a click on the canvas (empty space)
+    if (e && e.type === 'pointerup' && e.target === canvasRef.current) {
+      const dx = e.clientX - dragStartPos.current.x
+      const dy = e.clientY - dragStartPos.current.y
+      if (dx * dx + dy * dy < 25) {
+        setSelectedId(null)
+      }
+    }
   }
 
   // ---- State helpers ----
@@ -643,7 +654,7 @@ useEffect(() => {
     setNodes(laid)
     setAppState('active')
     const root = laid.find((n) => !n.parentId)
-    if (root) focusCameraOn(root.x, root.y)
+    if (root) focusCameraOn(root.x + ROOT_WIDTH / 2, root.y)
   }, [focusCameraOn])
 
   const undo = useCallback(() => {
@@ -685,10 +696,12 @@ useEffect(() => {
     setCurrentId(rec.id)
     setLastOpenedId(rec.id)
     setDecisions(listDecisions())
+    setSelectedId(null)
+    setCollapsedIds(new Set())
     setAppState('animating')
     const root = { id: 'root', type: 'decision', label: text, isGenerating: true, createdAt: Date.now() }
     setNodesWithLayout([root])
-    focusCameraOn(0, 0)
+    focusCameraOn(ROOT_WIDTH / 2, 0)
     try {
       const parsed = await callGemini(dimensionPrompt(text), dimensionSys)
       if (!parsed?.items?.length) throw new Error('The AI returned an empty response.')
@@ -701,14 +714,19 @@ useEffect(() => {
         y: 0,
         createdAt: Date.now() + idx,
       }))
+      let nextLayout = []
       setNodesWithLayout((prev) => {
         const r = prev.find((n) => n.id === 'root')
         if (!r) return prev
-        return [{ ...r, isGenerating: false }, ...dims]
+        nextLayout = [{ ...r, isGenerating: false }, ...dims]
+        return nextLayout
       })
       setAppState('active')
       pushToast(`Mapped across ${dims.length} dimensions. Click any node to expand consequences.`, 'success')
-      setTimeout(() => fitView(), 80)
+      setTimeout(() => {
+        // Compute the layout synchronously so we have the exact positions to fit
+        fitView(layoutTree(nextLayout))
+      }, 10)
     } catch (err) {
       pushToast(`Could not generate dimensions — ${err.message}`, 'error')
       setNodesWithLayout([{ ...root, isGenerating: false }])
@@ -742,7 +760,7 @@ useEffect(() => {
       depth++
       curParent = nodesRef.current.find((n) => n.id === curParent.parentId)
     }
-    if (depth >= 3) {
+    if (depth >= 8) {
       pushToast('Maximum automatic depth reached. Focus on an existing branch.', 'warning')
       return
     }
@@ -1029,7 +1047,7 @@ useEffect(() => {
       }
       return next
     })
-    focusCameraOn(node.x, node.y)
+    focusCameraOn(node.x + (node.type === 'decision' ? ROOT_WIDTH : CHILD_WIDTH) / 2, node.y)
   }, [focusCameraOn])
 
   const stats = useMemo(() => {
