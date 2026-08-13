@@ -31,21 +31,23 @@ export default function Dashboard({
         <h1 className="text-5xl font-bold tracking-tight text-white drop-shadow-2xl">DecisionOS</h1>
       </div>
 
-      <form onSubmit={onSubmit} className="relative w-[500px] max-w-[90vw] shadow-2xl group">
-        <div className="absolute -inset-1 bg-gradient-to-r from-zinc-500 to-zinc-700 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
-        <input
-          type="text"
-          placeholder="What decision are you exploring?"
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          className="relative w-full bg-zinc-900/90 backdrop-blur-xl border border-zinc-700 text-zinc-100 px-8 py-5 rounded-full outline-none focus:border-zinc-500 focus:ring-2 focus:ring-zinc-600 transition-all text-lg placeholder:text-zinc-500 shadow-inner"
-        />
+      <form onSubmit={onSubmit} className="flex items-center gap-3 w-[580px] max-w-[95vw] group">
+        <div className="relative flex-1 shadow-2xl">
+          <div className="absolute -inset-1 bg-gradient-to-r from-zinc-500 to-zinc-700 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
+          <input
+            type="text"
+            placeholder="What decision are you exploring?"
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            className="relative w-full bg-zinc-900/90 backdrop-blur-xl border border-zinc-700 text-zinc-100 px-8 py-5 rounded-full outline-none focus:border-zinc-500 focus:ring-2 focus:ring-zinc-600 transition-all text-lg placeholder:text-zinc-500 shadow-inner"
+          />
+        </div>
         <button
           type="submit"
-          className="absolute right-3 top-1/2 -translate-y-1/2 p-3 bg-zinc-100 text-zinc-900 rounded-full hover:bg-white hover:scale-105 transition-all flex items-center justify-center"
+          className="shrink-0 p-5 bg-zinc-100 text-zinc-900 rounded-full hover:bg-white hover:scale-105 transition-all flex items-center justify-center shadow-2xl cursor-pointer"
           aria-label="Build decision tree"
         >
-          <ArrowRight size={20} />
+          <ArrowRight size={24} />
         </button>
       </form>
 

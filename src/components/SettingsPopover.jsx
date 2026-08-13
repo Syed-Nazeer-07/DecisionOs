@@ -124,9 +124,6 @@ export default function SettingsPopover({ onSaveKey, onSaveOpenRouterKey, onClos
         {/* OpenRouter */}
         <section className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-4 space-y-2.5">
           <div className="flex items-center gap-2">
-            <span className="w-6 h-6 rounded-lg bg-violet-500/15 text-violet-300 flex items-center justify-center shrink-0">
-              <Sparkles size={13} />
-            </span>
             <span className="text-sm font-semibold text-zinc-100">OpenRouter</span>
             <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
               Recommended
@@ -165,7 +162,7 @@ export default function SettingsPopover({ onSaveKey, onSaveOpenRouterKey, onClos
                   onSaveOpenRouterKey(orTrim)
                   flashSaved('saved')
                 }}
-                className="text-xs font-medium bg-zinc-100 text-zinc-900 hover:bg-white px-3 py-1.5 rounded-lg transition-colors"
+                className="text-xs font-medium bg-zinc-100 text-zinc-900 hover:bg-white px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
               >
                 Save
               </button>
@@ -176,9 +173,6 @@ export default function SettingsPopover({ onSaveKey, onSaveOpenRouterKey, onClos
         {/* Google Gemini */}
         <section className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-4 space-y-2.5">
           <div className="flex items-center gap-2">
-            <span className="w-6 h-6 rounded-lg bg-emerald-500/15 text-emerald-300 flex items-center justify-center shrink-0">
-              <Zap size={13} />
-            </span>
             <span className="text-sm font-semibold text-zinc-100">Google Gemini</span>
             <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-zinc-800 text-zinc-400 border border-zinc-700">
               Direct
@@ -216,7 +210,7 @@ export default function SettingsPopover({ onSaveKey, onSaveOpenRouterKey, onClos
                   onSaveKey(gemTrim)
                   flashSaved('saved')
                 }}
-                className="text-xs font-medium bg-zinc-100 text-zinc-900 hover:bg-white px-3 py-1.5 rounded-lg transition-colors"
+                className="text-xs font-medium bg-zinc-100 text-zinc-900 hover:bg-white px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
               >
                 Save
               </button>
@@ -227,14 +221,13 @@ export default function SettingsPopover({ onSaveKey, onSaveOpenRouterKey, onClos
         {/* Help */}
         <section className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4 space-y-3">
           <div className="flex items-center gap-2">
-            <HelpCircle size={14} className="text-sky-400" />
             <span className="text-sm font-semibold text-zinc-100">Help — getting & adding keys</span>
           </div>
 
           <div className="text-xs text-zinc-400 space-y-3 leading-relaxed">
             <div>
               <div className="font-semibold text-zinc-200 mb-1 flex items-center gap-1.5">
-                <Sparkles size={11} className="text-violet-400" /> Option A — OpenRouter (recommended)
+                Option A — OpenRouter (recommended)
               </div>
               <ol className="list-decimal pl-4 space-y-1 text-zinc-500">
                 <li>
@@ -255,7 +248,7 @@ export default function SettingsPopover({ onSaveKey, onSaveOpenRouterKey, onClos
 
             <div>
               <div className="font-semibold text-zinc-200 mb-1 flex items-center gap-1.5">
-                <Zap size={11} className="text-emerald-400" /> Option B — Google Gemini
+                Option B — Google Gemini
               </div>
               <ol className="list-decimal pl-4 space-y-1 text-zinc-500">
                 <li>
@@ -271,7 +264,7 @@ export default function SettingsPopover({ onSaveKey, onSaveOpenRouterKey, onClos
 
             <div>
               <div className="font-semibold text-zinc-200 mb-1 flex items-center gap-1.5">
-                <Globe size={11} className="text-sky-400" /> Which should I use?
+                Which should I use?
               </div>
               <p>
                 <span className="text-zinc-300">OpenRouter is preferred</span> — one key can route across many models (most free via the free tier), and DecisionOS falls back automatically when a model is rate-limited or unavailable. Usage is subject to your OpenRouter account and each model's own limits. Use a Gemini key if you already have one. If both are saved, OpenRouter is used.
@@ -280,7 +273,7 @@ export default function SettingsPopover({ onSaveKey, onSaveOpenRouterKey, onClos
 
             <div>
               <div className="font-semibold text-zinc-200 mb-1 flex items-center gap-1.5">
-                <ShieldCheck size={11} className="text-emerald-400" /> Is it safe?
+                Is it safe?
               </div>
               <p>
                 Keys are stored only in your browser (localStorage) and sent only to the provider you choose. Clearing a
@@ -292,7 +285,7 @@ export default function SettingsPopover({ onSaveKey, onSaveOpenRouterKey, onClos
 
             <div>
               <div className="font-semibold text-zinc-200 mb-1 flex items-center gap-1.5">
-                <Loader2 size={11} className="text-amber-400" /> Still stuck?
+                Still stuck?
               </div>
               <p>
                 OpenRouter keys never appear in the list until they are created — after creating one, refresh
