@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import {
+  Check,
   Copy,
+  FilePlus2,
   MoreHorizontal,
   Pencil,
   Settings,
